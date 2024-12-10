@@ -2,6 +2,7 @@ package com.example.librarypapb
 
 import android.icu.text.CaseMap.Title
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,8 @@ class BookPageActivity : AppCompatActivity() {
     lateinit var title: TextView
     lateinit var author: TextView
     lateinit var contains: TextView
+    lateinit var backBtn: Button
+
     val db = FirebaseFirestore.getInstance()
     val booksCollection = db.collection("Book")
 
@@ -24,6 +27,11 @@ class BookPageActivity : AppCompatActivity() {
         title = findViewById(R.id.Title)
         author = findViewById(R.id.textView3)
         contains = findViewById(R.id.bookContains)
+        backBtn = findViewById(R.id.backBtn)
+
+        backBtn.setOnClickListener {
+            finish()
+        }
 
         val bookId = intent.getStringExtra("BOOK_ID")
 

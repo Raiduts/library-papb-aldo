@@ -119,6 +119,7 @@ class LoginPageActivity : AppCompatActivity() {
 
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
+                Log.d("LOGIN", "task:success")
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("LOGIN", "signInWithEmail:success")

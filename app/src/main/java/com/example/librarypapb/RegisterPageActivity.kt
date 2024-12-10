@@ -20,6 +20,8 @@ class RegisterPageActivity : AppCompatActivity() {
     private lateinit var passwordReg : EditText
     private lateinit var passwordVerificationReg : EditText
     private lateinit var registerBtn : Button
+    private lateinit var backBtn : Button
+
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +33,11 @@ class RegisterPageActivity : AppCompatActivity() {
         passwordReg = findViewById(R.id.passwordReg)
         passwordVerificationReg = findViewById(R.id.passwordVerificationReg)
         registerBtn = findViewById(R.id.button)
+        backBtn = findViewById(R.id.backBtn)
+
+        backBtn.setOnClickListener {
+            finish()
+        }
 
         auth = Firebase.auth
 
