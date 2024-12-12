@@ -5,13 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookPageActivity">
+    tools:context=".BookPageActivity"
+    android:background="#F0F8FF">
 
     <Button
         android:id="@+id/backBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
+        android:textColor="@color/black"
+        android:backgroundTint="#F0F8FF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_marginTop="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,6 +33,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Title"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
             android:textAlignment="center" />
 
         <TextView
@@ -36,11 +43,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="author"
+            android:textSize="20sp"
+            android:textStyle="italic"
             android:textAlignment="center" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,6 +68,8 @@
                     android:scrollHorizontally="false"
                     android:singleLine="false"
                     android:textSize="16sp"
+                    android:justificationMode="inter_word"
+                    android:layout_marginHorizontal="20dp"
                     android:textColor="@color/black" />
             </LinearLayout>
         </ScrollView>

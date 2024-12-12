@@ -62,11 +62,6 @@ class DashboardPageActivity : AppCompatActivity() {
         recyclerView = findViewById<RecyclerView>(R.id.bookList)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        //val data = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
-
-        /*val recyclerView = findViewById<RecyclerView>(R.id.bookList)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = MyAdapter(data)*/
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

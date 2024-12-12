@@ -6,6 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F8FF"
     tools:context=".AddBookActivity">
 
   <Button
@@ -13,6 +14,8 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Back"
+      android:textColor="@color/black"
+      android:backgroundTint="#F0F8FF"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,37 +34,58 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        android:text="TAMBAHKAN BUKU"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:text="ADD NEW BOOK"
         android:textAlignment="center" />
 
     <EditText
         android:id="@+id/titleInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="70dp"
         android:ems="15"
         android:hint="Title"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="12dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/edittext_background"
+        android:textColor="@android:color/black"
+        android:textColorHint="#A6A6A6"/>
 
     <EditText
         android:id="@+id/authorInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:ems="15"
         android:hint="Author"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="12dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/edittext_background"
+        android:textColor="@android:color/black"
+        android:textColorHint="#A6A6A6"/>
 
     <Button
         android:id="@+id/fileUploadBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="30dp"
+        android:backgroundTint="#C1DEFF"
         android:text="Upload TXT File" />
 
     <Button
         android:id="@+id/addBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="30dp"
+        android:backgroundTint="#014FAB"
+
         android:text="Add Book" />
 
   </LinearLayout>

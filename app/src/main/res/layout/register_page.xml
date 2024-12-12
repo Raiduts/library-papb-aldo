@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F8FF"
     tools:context=".RegisterPageActivity">
 
     <Button
@@ -12,6 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
+        android:textColor="@color/black"
+        android:backgroundTint="#F0F8FF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,42 +31,91 @@
             android:id="@+id/REGISTER"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="REGISTER" />
+            android:layout_marginTop="30dp"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:text="Sign Up" />
 
-        <EditText
-            android:id="@+id/emailReg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:ems="15"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
-
-        <EditText
-            android:id="@+id/passwordReg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:ems="15"
-            android:hint="Password"
-            android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/passwordVerificationReg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:ems="15"
-            android:hint="Password Again"
-            android:inputType="textPassword" />
-
-        <Button
-            android:id="@+id/button"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
-            android:text="REGISTER" />
+            android:orientation="vertical"
+            android:padding="30dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/emailReg"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Email"
+                android:padding="12dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="textEmailAddress"
+                android:textColor="@android:color/black"
+                android:textColorHint="#A6A6A6"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/passwordReg"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edittext_background"
+                android:ems="15"
+                android:padding="12dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@android:color/black"
+                android:textColorHint="#A6A6A6"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/passwordVerificationReg"
+                android:layout_marginTop="10dp"
+                android:hint="Password Again"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edittext_background"
+                android:ems="15"
+                android:padding="12dp"
+                android:inputType="textPassword"
+                android:textColor="@android:color/black"
+                android:textColorHint="#A6A6A6"
+                android:layout_marginBottom="20dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#014FAB"
+                android:text="Sign Up"  />
+
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,6 @@ package com.example.librarypapb
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Email
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -29,11 +28,9 @@ class LoginPageActivity : AppCompatActivity() {
     private lateinit var emailEditText : EditText
     private lateinit var passwordEditText : EditText
     private lateinit var loginBtn: Button
-    private lateinit var registerBtn: Button
+    private lateinit var registerBtn: TextView
 
     private lateinit var googleBtn : Button
-    private lateinit var facebookBtn : Button
-    private lateinit var twitterBtn : Button
 
     private lateinit var auth: FirebaseAuth
     private var user : FirebaseUser? = null
@@ -59,8 +56,6 @@ class LoginPageActivity : AppCompatActivity() {
         registerBtn = findViewById(R.id.registerBtn)
 
         googleBtn = findViewById(R.id.googleBtn)
-        facebookBtn = findViewById(R.id.facebookBtn)
-        twitterBtn = findViewById(R.id.twitterBtn)
 
         loginBtn.setOnClickListener {
             loginUser()
@@ -104,9 +99,6 @@ class LoginPageActivity : AppCompatActivity() {
     private fun checkAccount() {
         if (user != null) {
             logInSuccess()
-        } else {
-            // User is not signed in
-            // ... display login screen, disable features, etc. ...
         }
     }
 
@@ -116,6 +108,11 @@ class LoginPageActivity : AppCompatActivity() {
         val password = passwordEditText.text.toString()
 
         // Validate input (e.g., check for empty fields)
+        if (email == "" || password == "") {
+            Toast.makeText(baseContext, "Please fill the email and password fields.",
+                Toast.LENGTH_SHORT).show()
+            return
+        }
 
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
@@ -127,7 +124,7 @@ class LoginPageActivity : AppCompatActivity() {
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("LOGIN", "signInWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
+                    Toast.makeText(baseContext, "Login failed, maybe wrong email or password duh",
                         Toast.LENGTH_SHORT).show()
                 }
             }
